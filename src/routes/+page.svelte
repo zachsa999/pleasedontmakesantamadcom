@@ -52,6 +52,10 @@
     </blockquote>
     <p class="quote-author">- S. Claus (Definitely not paid for this review)</p>
   </div>
+
+  <footer>
+    Made by Mr Wiebe 🎅
+  </footer>
 </main>
 
 <style>
@@ -182,5 +186,13 @@
   .winking-santa {
     width: 100px;
     margin-bottom: 1rem;
+  }
+
+  footer {
+    margin-top: 4rem;
+    padding: 2rem;
+    text-align: center;
+    color: #666;
+    border-top: 1px solid #eee;
   }
 </style>
