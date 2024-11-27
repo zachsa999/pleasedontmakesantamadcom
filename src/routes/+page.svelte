@@ -4,22 +4,29 @@
       type: 'Regular Fake Chimney',
       price: '$99.99',
       description: '❌ Will definitely get you on the naughty list',
-      santaApproved: false
+      santaApproved: false,
+      image: '/images/angry-santa.jpg'
     },
     {
       type: 'Real Fake Chimney™',
       price: '$299.99',
       description: '✅ Santa-approved technology',
-      santaApproved: true
+      santaApproved: true,
+      image: '/images/happy-santa.gif'
     }
   ];
 </script>
 
 <main>
+  <div class="santa-peek">
+    <img src="/images/peeking-santa.gif" alt="Santa peeking" />
+  </div>
+
   <h1>Please Don't Make Santa Mad!</h1>
   
   <div class="hero">
     <h2>Are you using a regular fake chimney? Santa knows... 😠</h2>
+    <img class="detective-santa" src="/images/detective-santa.png" alt="Detective Santa" />
     <p>Don't risk getting on the naughty list with those other fake chimneys.</p>
     <p class="tagline">Get our patented Real Fake Chimney™ - The only fake chimney that Santa can't tell is fake!</p>
   </div>
@@ -27,6 +34,7 @@
   <div class="products">
     {#each chimneyTypes as chimney}
       <div class="product-card {chimney.santaApproved ? 'approved' : 'dangerous'}">
+        <img class="product-image" src={chimney.image} alt={chimney.type} />
         <h3>{chimney.type}</h3>
         <p class="price">{chimney.price}</p>
         <p class="description">{chimney.description}</p>
@@ -38,6 +46,7 @@
   </div>
 
   <div class="testimonial">
+    <img class="winking-santa" src="/images/winking-santa.jpg" alt="Winking Santa" />
     <blockquote>
       "I couldn't tell the difference between this and a real chimney! Ho ho ho!"
     </blockquote>
@@ -83,6 +92,9 @@
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .approved {
@@ -141,5 +153,34 @@
   .quote-author {
     margin-top: 1rem;
     color: #666;
+  }
+
+  .santa-peek {
+    position: fixed;
+    top: 0;
+    right: 20px;
+    z-index: 100;
+  }
+
+  .santa-peek img {
+    width: 150px;
+    transform: rotate(180deg);
+  }
+
+  .detective-santa {
+    width: 200px;
+    margin: 20px 0;
+  }
+
+  .product-image {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+  }
+
+  .winking-santa {
+    width: 100px;
+    margin-bottom: 1rem;
   }
 </style>
